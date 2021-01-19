@@ -19,7 +19,8 @@ int main() {
 
 /*
 모범 답안
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 int main(){
 	int a, b, sum = 0;
 	cin >> a >> b;
