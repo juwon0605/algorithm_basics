@@ -1,7 +1,6 @@
 ﻿#include<iostream>
 using namespace std;
 
-// aso;ihtwao;ithodihto;aeijto;iaejto;wijasilthaekljrhtaklehtlk
 /*
 1. 1부터 N까지 M의 배수합
 자연수 N이 입력되면 1부터 N까지의 수 중 M의 배수합을 출력하는 프로그램을 작성하세요.
