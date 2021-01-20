@@ -22,7 +22,7 @@ int main() {
 	int count = 0;
 	cin >> text;
 	for (unsigned int i = 0; i < text.length(); i++) {
-		if ((text[i] > 47) && (text[i] < 58)) {
+		if ((text[i] - '0' >= 0) && (text[i] - '0' <= 9)) {
 			str_number += text[i];
 		}
 	}
