@@ -16,10 +16,6 @@ int main() {
 	string text;
 	stack<char> judge;
 	getline(cin, text);
-	if (text[0] == ')') {
-		cout << "NO";
-		return 0;
-	} 
 	for (unsigned int i = 0; i < text.size(); i++) {
 		if (text[i] == '(') judge.push(text[i]);
 		else {
