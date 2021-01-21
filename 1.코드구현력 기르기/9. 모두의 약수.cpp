@@ -50,7 +50,7 @@ int main(){
 */
 
 /*
-모범 답안 반영전
+모범 답안 반영 전
 int main() {
 	freopen("input.txt", "rt", stdin);
 	int n;
