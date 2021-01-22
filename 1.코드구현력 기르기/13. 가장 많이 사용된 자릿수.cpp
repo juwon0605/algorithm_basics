@@ -31,12 +31,11 @@ int main() {
 	for (int i = 0; i < 10; i++) {
 		if (num_arr[answer] <= num_arr[i]) answer = i;
 	}
-	cout <<  answer;
+	cout << answer;
 	return 0;
 }
 /*
 모범 답안
-
 #include<stdio.h>
 int ch[10];
 int main(){
