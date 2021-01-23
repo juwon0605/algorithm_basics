@@ -20,10 +20,7 @@ int main() {
 	// freopen("input.txt", "rt", stdin);
 	string n;
 	cin >> n;
-	int num_arr[10];
-	for (int i = 0; i < 10; i++) {
-		num_arr[i] = 0;
-	}
+	int num_arr[10] = { 0 };
 	int answer = 0;
 	for (int i = 0; i < n.length(); i++) {
 		num_arr[n[i] - '0']++;

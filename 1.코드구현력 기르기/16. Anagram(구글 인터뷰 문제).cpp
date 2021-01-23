@@ -26,7 +26,7 @@ int main() {
 	if (a.length() != b.length()) {
 		cout << "NO";
 		return 0;
-	} 
+	}
 	for (int i = 0; i < a.length(); i++) {
 		int index = b.find(a[i]);
 		if (index == -1) {
@@ -40,7 +40,6 @@ int main() {
 	cout << "YES";
 	return 0;
 }
-
 /*
 모범 답안
 #include<stdio.h>
