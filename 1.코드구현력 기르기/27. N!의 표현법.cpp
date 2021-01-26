@@ -39,6 +39,7 @@ int main() {
 	}
 	return 0;
 }
+
 /*
 모범 답안
 #include<stdio.h>
