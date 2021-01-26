@@ -18,8 +18,8 @@ N개의 숫자가 나열된 수열이 주어집니다. 이 수열 중 연속적�
 */
 int main() {
 	//freopen("input.txt", "rt", stdin);
-	int n, before, now;
-	int max = 0;
+	int n, before, now;												
+	int max = 0;								
 	int length = 1;
 	cin >> n >> before;
 	for (int i = 1; i < n; i++) {
