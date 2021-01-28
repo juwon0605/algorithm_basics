@@ -36,7 +36,7 @@ int main() {
 	cout << cnt;
 	return 0;
 }
-/*
+
 모범 답안
 #include<stdio.h>
 int main(){
@@ -63,7 +63,7 @@ int main(){
 	printf("%d\n", c*12+h);
 	return 0;
 }
-*/
+
 
 /*
 모범 답안 반영 전
