@@ -30,7 +30,7 @@ using namespace std;
 */
 int main() {
 	//freopen("input.txt", "rt", stdin);
-	int n, cnt=0;
+	int n, sum=0;
 	cin >> n;
 	int *x = new int[n];
 	int *y = new int[n];
@@ -45,10 +45,10 @@ int main() {
 		d_arr[i] = new int[n];
 		for (int j = 0; j < n; j++) {
 			d_arr[i][j] = (y[i] > x[j] ? x[j] : y[i]);
-			cnt += d_arr[i][j];
+			sum += d_arr[i][j];
 		}
 	}
-	cout << cnt;
+	cout << sum;
 	return 0;
 }
 /*
