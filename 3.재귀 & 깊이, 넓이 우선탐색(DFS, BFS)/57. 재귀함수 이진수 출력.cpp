@@ -4,13 +4,13 @@
 using namespace std;
 
 /*
-56. 재귀함수 분석
-자연수 N이 주어지면 아래와 같이 출력하는 프로그램을 작성하세요. 재귀함수를 이용해서 출
-력해야 합니다.
+57. 재귀함수 이진수 출력
+10진수 N이 입력되면 2진수로 변환하여 출력하는 프로그램을 작성하세요. 단 재귀함수를 이용
+해서 출력해야 합니다.
 ▣ 입력설명
-첫 번째 줄에 자연수 N(1<=N<=20)이 주어집니다.
+첫 번째 줄에 10진수 N(1<=N<=1,000)이 주어집니다.
 ▣ 출력설명
-첫 번째 줄에 재귀함수를 이용해서 출력하세요.
+첫 번째 줄에 이진수를 출력하세요.
 */
 void recursion(int);
 int main() {
@@ -20,38 +20,32 @@ int main() {
 	recursion(n);
 	return 0;
 }
-
 void recursion(int n) {
-	if (n == 1) {
-		cout << n;
-		return;
-	} 
+	if (n == 0) return;
 	else {
-		recursion(n - 1);
-		cout << n << " ";
-		return;
+		recursion(n / 2);
+		cout << n % 2;
 	}
 }
+
 /*
 모범 답안
 #include<stdio.h>
-#include<stack>
 #include<vector>
+#include<algorithm>
 using namespace std;
-
-void DFS(int x){
+void D(int x){
 	if(x==0) return;
 	else{
-		DFS(x-1);
-		printf("%d ", x);
+		D(x/2);
+		printf("%d", x%2);
 	}
 }
-
 int main(){
 	freopen("input.txt", "rt", stdin);
 	int n;
 	scanf("%d", &n);
-	DFS(n);
+	D(n);
 	return 0;
 }
 */
