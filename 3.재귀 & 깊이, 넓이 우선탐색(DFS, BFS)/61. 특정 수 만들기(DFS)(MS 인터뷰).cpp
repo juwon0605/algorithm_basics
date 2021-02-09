@@ -89,7 +89,7 @@ void DFS(int L, int sum){
 	if(L==n+1){
 		if(sum==m){
 			cnt++;
-			for(int i=1; i<L; i++){
+			for (int i = 1; i < L; i++) {
 				printf("%d ", path[i]);
 			}
 			puts("");
