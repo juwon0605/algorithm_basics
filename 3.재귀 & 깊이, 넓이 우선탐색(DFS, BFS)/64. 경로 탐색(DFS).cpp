@@ -40,6 +40,7 @@ int main() {
 void DFS(int v) {
 	if (v == n) {
 		cnt++;
+		return;
 	}
 	else {
 		for (int i = 1; i <= n; i++) {
