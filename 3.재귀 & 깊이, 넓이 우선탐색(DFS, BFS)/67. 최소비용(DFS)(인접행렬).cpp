@@ -16,11 +16,13 @@ using namespace std;
 void DFS(int);
 int matrix[21][21];
 int flag[1025];
+//vector<int> flag
 int n, min = 2147000000, sum = 0;
 int main() {
 	//freopen("input.txt", "rt", stdin);
 	int m, v1, v2, e;
 	cin >> n >> m;
+	//flag(m)
 	for (int i = 1; i <= m; i++) {
 		cin >> v1 >> v2 >> e;
 		matrix[v1][v2] = e;
