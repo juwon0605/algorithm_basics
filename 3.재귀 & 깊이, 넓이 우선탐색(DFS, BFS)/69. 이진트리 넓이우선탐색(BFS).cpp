@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿//#define _CRT_SECURE_NO_WARNINGS
 #define n 6
 
 #include<iostream>
@@ -20,13 +20,14 @@ vector<vector<int>> list(n + 2);
 queue<int> queqe;
 int flag[n + 2];
 int main() {
-	freopen("input.txt", "rt", stdin);
+	//freopen("input.txt", "rt", stdin);
 	int v1, v2;
 	for (int i = 1; i <= n; i++) {
 		cin >> v1 >> v2;
 		list[v1].push_back(v2);
 		list[v2].push_back(v1);
 	}
+	flag[1] = 1;
 	BFS(1);
 	return 0;
 }
@@ -34,16 +35,17 @@ void BFS(int v) {
 	queqe.push(v);
 	while (!queqe.empty()) {
 		int cur = queqe.front();
-		if (flag[cur] == 0) {
-			cout << cur << " ";
-			flag[cur] = 1;
-			for (int i = 0; i < list[cur].size(); i++) {
+		queqe.pop();
+		cout << cur << " ";
+		for (int i = 0; i < list[cur].size(); i++) {
+			if (flag[cur] == 0) {
 				queqe.push(list[cur][i]);
+				flag[list[cur][i]] = 1;
 			}
 		}
-		queqe.pop();
 	}
 }
+
 /*
 모범 답안
 #include<stdio.h>
