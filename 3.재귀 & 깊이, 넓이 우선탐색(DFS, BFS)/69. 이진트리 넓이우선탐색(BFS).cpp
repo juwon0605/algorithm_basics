@@ -17,7 +17,6 @@ using namespace std;
 */
 void BFS(int);
 vector<vector<int>> list(n + 2);
-queue<int> queqe;
 int flag[n + 2];
 int main() {
 	//freopen("input.txt", "rt", stdin);
@@ -32,6 +31,7 @@ int main() {
 	return 0;
 }
 void BFS(int v) {
+	queue<int> queqe;
 	queqe.push(v);
 	while (!queqe.empty()) {
 		int cur = queqe.front();

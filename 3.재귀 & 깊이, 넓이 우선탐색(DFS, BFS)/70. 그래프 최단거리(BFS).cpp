@@ -29,6 +29,7 @@ int main() {
 		cin >> v1 >> v2;
 		list[v1].push_back(v2);
 	}
+	flag[1] = 1;
 	BFS(1);
 	for (int i = 2; i <= n; i++) {
 		cout << i << " : " << res[i] << endl;
