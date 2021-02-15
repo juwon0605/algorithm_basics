@@ -14,20 +14,29 @@ N과 R이 주어지면 이항계수를 구하는 프로그램을 작성하세요
 ▣ 출력설명
 첫 번째 줄에 이항계수 값을 출력한다.
 */
+int Factorial(int);
+int Combination(int, int);
+int d_arr[21][21];
 int main() {
 	ios::sync_with_stdio(false);
 	//freopen("input.txt", "rt", stdin);
-	int n, r, res=1;
+	int n, r, res = 1;
 	cin >> n >> r;
-	for (int i = 0; i < r; i++) {
-		res *= n;
-		n -= 1;
-	}
-	for (int i = r; i > 0; i--) {
-		res /= i;
-	}
-	cout << res;
+	Combination(n, r);
+	cout << d_arr[n][r];
 	return 0;
+}
+int Factorial(int n) {
+	if (n == 1) return 1;
+	else return n * Factorial(n - 1);
+}
+int Combination(int n, int r) {
+	if (d_arr[n][r] != 0) return d_arr[n][r];
+	if (r == 0 || n == r) return 1;
+	else {
+		d_arr[n][r] = Combination(n - 1, r - 1) + Combination(n - 1, r);
+		return d_arr[n][r];
+	}
 }
 /*
 모범 답안
