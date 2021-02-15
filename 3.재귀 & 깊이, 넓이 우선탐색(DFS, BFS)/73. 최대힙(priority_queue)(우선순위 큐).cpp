@@ -25,6 +25,7 @@ using namespace std;
 2) 연산을 한 결과를 보여준다.
 */
 int main() {
+	ios::sync_with_stdio(false);
 	//freopen("input.txt", "rt", stdin);
 	int num;
 	priority_queue<int> max_heap;
@@ -69,7 +70,8 @@ int main() {
 int main() {
 	//freopen("input.txt", "rt", stdin);
 	int num;
-	priority_queue<int, vector<int>> max_heap;
+	priority_queue<int, vector<int>, less<int>> max_heap;
+	//priority_queue<int> max_heap;
 	while (1) {
 		cin >> num;
 		if (num == -1) {

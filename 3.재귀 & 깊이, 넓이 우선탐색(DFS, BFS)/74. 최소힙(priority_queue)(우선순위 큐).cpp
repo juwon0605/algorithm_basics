@@ -26,6 +26,7 @@ using namespace std;
 2) 연산을 한 결과를 보여준다.
 */
 int main() {
+	ios::sync_with_stdio(false);
 	//freopen("input.txt", "rt", stdin);
 	int num;
 	priority_queue<int> min_heap;
