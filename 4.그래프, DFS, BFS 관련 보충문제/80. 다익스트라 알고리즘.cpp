@@ -1,7 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #define INF 1e9
 
-//#include<stdio.h>
 #include<iostream>
 #include<vector>
 #include<queue>
