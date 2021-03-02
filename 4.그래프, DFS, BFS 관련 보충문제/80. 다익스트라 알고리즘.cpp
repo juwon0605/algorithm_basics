@@ -1,5 +1,5 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
-#define INF 1e9
+#define INF 2147000000
 
 #include<iostream>
 #include<vector>
