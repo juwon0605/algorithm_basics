@@ -28,7 +28,7 @@
 12
 */
 
-#define _CRT_SECURE_NO_WARNINGS
+//#define _CRT_SECURE_NO_WARNINGS
 #define n 7
 
 #include<iostream>
@@ -40,7 +40,7 @@ int map[n + 2][n + 2], flag[n + 2][n + 2], cnt[n + 2][n + 2];
 int dy[4] = {1, 0, -1, 0}, dx[4] = {0, 1, 0, -1};
 int main() {
 	ios::sync_with_stdio(false);
-	freopen("input.txt", "rt", stdin);
+	//freopen("input.txt", "rt", stdin);
 	for (int i = 0; i <= n + 1; i++) {
 		map[i][0] = 1;
 		map[i][n+1] = 1;
