@@ -1,10 +1,4 @@
-﻿//#define _CRT_SECURE_NO_WARNINGS
-
-#include<iostream>
-#include<vector>
-using namespace std;
-
-/*
+﻿/*
 51. 영지(territory) 선택 : (large)
 세종대왕은 현수에게 현수가 다스릴 수 있는 영지를 하사하기로 했다. 전체 땅은 사각형으로 표
 시된다. 그 사각형의 땅 중에서 세종대왕이 현수가 다스릴 수 있는 땅의 크기(세로의 길이와 가
@@ -28,12 +22,21 @@ using namespace std;
 ▣ 출력설명
 첫 줄에 현수가 얻을 수 있는 오렌지 나무의 최대 개수를 출력한다.
 */
+
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
 int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 	//freopen("input.txt", "rt", stdin);
 	int h, w, x, y, max = 0, sum;
 	cin >> h >> w;
 	int **terr = new int*[h + 1];
-	for (int i = 1; i <= w; i++) {
+	for (int i = 1; i <= h; i++) {
 		terr[i] = new int[w + 1];
 		for (int j = 1; j <= w; j++) {
 			cin >> terr[i][j];
