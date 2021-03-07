@@ -124,6 +124,12 @@ void BFS(int a, int b) {
 		Q.pop();
 		int i = now.first;
 		int j = now.second;
+		if (!rabit_pQ.empty()) {
+			if (dis[i][j] > rabit_pQ.top().dis) {
+				target = rabit_pQ.top();
+				break;
+			}
+		}
 		for (int k = 0; k < 4; k++) {
 			int ii = i + dy[k];
 			int jj = j + dx[k];
@@ -227,5 +233,110 @@ int main(){
 	}
 	printf("%d\n", res);
 	return 0;
+}
+*/
+
+/*
+모범 답안 반영 전
+//#define _CRT_SECURE_NO_WARNINGS
+
+#include<iostream>
+#include<queue>
+using namespace std;
+
+struct Simba {
+	int y = 0;
+	int x = 0;
+	int size = 2;
+	int eatNum = 0;
+	Simba(){}
+	Simba(int a, int b) {
+		y = a;
+		x = b;
+	}
+};
+struct Rabit {
+	int y = 0;
+	int x = 0;
+	int dis = 0;
+	Rabit() {}
+	Rabit(int a, int b, int c) {
+		y = a;
+		x = b;
+		dis = c;
+	}
+	bool operator<(const Rabit &b) const {
+		if (dis != b.dis) return dis > b.dis;
+		else {
+			if (y != b.y) return y > b.y;
+			else return x > b.x;
+		}
+	}
+};
+void BFS(int, int);
+Simba simba;
+Rabit target;
+int map[27][27], dis[27][27];
+int dy[4] = { 1,0,-1,0 }, dx[4] = { 0,1,0,-1 };
+int n, res = 0;
+bool finish = false;
+int main() {
+	ios_base::sync_with_stdio(false);
+	//freopen("input.txt", "rt", stdin);
+	cin >> n;
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= n; j++) {
+			cin >> map[i][j];
+			if (map[i][j] == 9) {
+				simba.y = i;
+				simba.x = j;
+			}
+		}
+	}
+	BFS(simba.y, simba.x);
+	while(!finish) {
+		map[simba.y][simba.x] = 0;
+		simba.y = target.y;
+		simba.x = target.x;
+		map[simba.y][simba.x] = 9;
+		dis[simba.y][simba.x] = 0;
+		res += target.dis;
+		simba.eatNum++;
+		if (simba.size == simba.eatNum) {
+			simba.size++;
+			simba.eatNum = 0;
+		}
+		BFS(simba.y, simba.x);
+	}
+	cout << res;
+	return 0;
+}
+void BFS(int a, int b) {
+	int flag[27][27] = { 0 };
+	flag[a][b] = 1;
+	priority_queue<Rabit> rabit_pQ;
+	queue<pair<int, int>> Q;
+	Q.push(make_pair(a, b));
+	while (!Q.empty()) {
+		pair<int, int> now = Q.front();
+		Q.pop();
+		int i = now.first;
+		int j = now.second;
+		for (int k = 0; k < 4; k++) {
+			int ii = i + dy[k];
+			int jj = j + dx[k];
+			if (ii < 1 || ii > n || jj < 1 || jj > n) continue;
+			if (map[ii][jj] <= simba.size && flag[ii][jj] == 0) {
+				flag[ii][jj] = 1;
+				Q.push(make_pair(ii, jj));
+				dis[ii][jj] = dis[i][j] + 1;
+				if (map[ii][jj] > 0 && map[ii][jj] < simba.size) {
+					rabit_pQ.push(Rabit(ii, jj, dis[ii][jj]));
+				}
+			}
+		}
+	}
+	if (rabit_pQ.empty()) finish = true;
+	else target = rabit_pQ.top();
 }
 */
