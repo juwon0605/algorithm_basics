@@ -86,3 +86,8 @@ int main(){
 	return 0;
 }
 */
+
+/*
+	NlogN 시간복잡도 풀이법
+	priority_queue<pair<int, int>> + struct(2중 배열 정의)를 통한 N(logN)구현
+*/

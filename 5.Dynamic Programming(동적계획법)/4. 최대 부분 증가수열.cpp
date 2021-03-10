@@ -78,6 +78,9 @@ int main(){
 	못 풀었음.
 	DP 안쓰는 새로운 풀이(동섭이 풀이)
 	최악 시간복잡도는 동일, 평균 시간복잡도 개선
+	(중요)
+	insert하는 위치 탐색을 이진탐색으로 구현하면
+	NlogN 시간복잡도로 풀이 가능
 
 //#define _CRT_SECURE_NO_WARNINGS
 
