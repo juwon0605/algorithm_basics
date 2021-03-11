@@ -1,5 +1,5 @@
 ﻿/*
-4. 최대 부분 증가수열
+4-3. 최대 부분 증가수열(STL lower_bound 활용)
 N개의 자연수로 이루어진 수열이 주어졌을 때, 그 중에서 가장 길게 증가하는(작은 수에서 큰
 수로) 원소들의 집합을 찾는 프로그램을 작성하라. 예를 들어, 원소가 2, 7, 5, 8, 6, 4, 7,
 12, 3 이면 가장 길게 증가하도록 원소들을 차례대로 뽑아내면 2, 5, 6, 7, 12를 뽑아내어 길
@@ -19,59 +19,28 @@ N개의 자연수로 이루어진 수열이 주어졌을 때, 그 중에서 가�
 //#define _CRT_SECURE_NO_WARNINGS
 
 #include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
+vector<int> lisV;
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	//freopen("input.txt", "rt", stdin);
-	int n, res = 1;
-	int num[1001], dp[1001];
-	cin >> n >> num[1];
-	dp[1] = 1;
-	for (int i = 2; i <= n; i++) {
-		cin >> num[i];
-		int max = 0;
-		for (int j = i-1; j >= 1; j--) {
-			if (num[i] > num[j]) {
-				if (dp[j] > max) max = dp[j];
-			}
+	int n, num;
+	cin >> n >> num;
+	lisV.push_back(num);
+	for (int i = 1; i < n; i++) {
+		cin >> num;
+		if (lisV.back() < num) {
+			lisV.push_back(num);
 		}
-		dp[i] = max + 1;
-		if (res < dp[i]) res = dp[i];
+		else {
+			auto it = lower_bound(lisV.begin(), lisV.end(), num);
+			*it = num;
+		}
 	}
-	cout << res;
+	cout << lisV.size();
 	return 0;
 }
-
-/*
-모범 답안
-
-(중요)이분탐색을 통한 NlogN 시간 복잡도로 풀이 가능.
-
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-	ios_base::sync_with_stdio(false);
-	freopen("input.txt", "rt", stdin);
-	int n, res=0;
-	cin>>n;
-	vector<int> arr(n+1), dy(n+1);
-	for(int i=1; i<=n; i++){
-		cin>>arr[i];
-	}
-	dy[1]=1;
-	for(int i=2; i<=n; i++){
-		int max=0;
-		for(int j=i-1; j>=1; j--){
-			if(arr[j]<arr[i] && dy[j]>max){
-				max=dy[j];
-			}
-		}
-		dy[i]=max+1;
-		if(dy[i]>res) res=dy[i];
-	}
-	cout<<res;
-	return 0;
-}
-*/

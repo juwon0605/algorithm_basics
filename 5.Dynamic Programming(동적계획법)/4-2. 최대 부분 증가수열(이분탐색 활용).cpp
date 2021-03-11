@@ -46,7 +46,7 @@ int main() {
 }
 int binarySearch(int key) {
 	int start = 0;
-	int end = lisV.size() - 2;
+	int end = lisV.size() - 1;
 	int mid;
 	while (start <= end) {
 		mid = (start + end) / 2;
@@ -59,13 +59,3 @@ int binarySearch(int key) {
 	}
 	return start;
 }
-
-/*
-모범 답안
-
-*/
-
-/*
-모범 답안 반영 전
-
-*/
