@@ -30,7 +30,7 @@ using namespace std;
 
 void BFS(int, int);
 vector<int> resV;
-int map[101][101];
+int map[100][100];
 int dy[4] = { 1,0,-1,0 }, dx[4] = { 0,1,0,-1 };
 int m, n;
 int main() {
