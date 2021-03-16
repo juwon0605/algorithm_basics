@@ -41,7 +41,7 @@ int main() {
 			if (now >= 4) cnt += digit;
 			else if (now == 3) {
 				next = stoi(n.substr(i + 1));
-				cnt += next;
+				cnt += (next + 1);
 			}
 		}
 		else {
