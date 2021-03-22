@@ -38,7 +38,7 @@ int main() {
 	}
 	cin >> m;
 	dp[0] = 0;
-	for (int i = 1; i <= m; i++) dp[i] = INF;
+	fill(dp + 1, dp + m + 1, INF);
 	for (int i = 0; i < coinV.size(); i++) {
 		coin = coinV[i];
 		for (int j = coin; j <= m; j++) {
