@@ -38,7 +38,7 @@
    - [x] MST(Minimum Spanning Tree)
    - [x] Dijkstra Algorithm
    - [x] Bellman-Ford Algorithm
-   - [x] Permutation
+   - [x] Permutation/ombination
 
    
 
